@@ -6,13 +6,11 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-
 @app.route("/mars", methods = ["POST"])
 def web_mars_post():
     sample_receive = request.form['sample_give']
     print(sample_receive)
     return jsonify({'msg': 'POST 연결 완료!'})
-
 
 @app.route("/mars", methods = ["GET"])
 def web_mars_get():
